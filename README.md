@@ -11,20 +11,12 @@
 LLM 서비스의 훅(Hook) 시스템이나 자동화를 위한 스크립트들이 포함되어 있습니다.
 
 - **`noti-telegram-for-gemini.sh`**: Gemini CLI의 작업 완료 이벤트를 가로채어 텔레그램 봇으로 알림을 보내는 zsh 스크립트입니다. 질문 내용과 응답 요약을 포함합니다.
-- **`noti-telegram-for-claude.sh`**: Claude의 작업 완료 알림을 텔레그램으로 전송하는 bash 스크립트입니다.
+- **`noti-telegram-for-claude.sh`**: Claude Code의 작업 완료 알림을 텔레그램으로 전송하는 bash 스크립트입니다.
 
-## 설정 및 사용법 (TODO)
+## 설정 및 사용법
 각 스크립트를 실제 LLM 도구의 훅으로 등록하는 방법은 다음과 같습니다.
-
-### Gemini CLI 훅 등록
-1. `~/.gemini/hooks/` 경로에 스크립트를 복사하거나 심볼릭 링크를 생성합니다.
-2. 스크립트 내의 `TELEGRAM_BOT_TOKEN`과 `TELEGRAM_CHAT_ID`를 본인의 정보로 수정합니다.
-3. 실행 권한을 부여합니다: `chmod +x scripts/noti-telegram-for-gemini.sh`
-
-### Claude 훅 등록
-1. `~/.claude/hooks/` 경로 설정을 확인합니다.
-2. 스크립트 내의 `BOT_TOKEN`과 `CHAT_ID`를 수정합니다.
+- 가이드 문서 참고 : [guide.md](scripts/telegram-hook/guide.md)
 
 ## 개발 규칙
 - **스크립트 작성**: 가능한 한 이식성이 좋은 Shell 문법을 사용하며, 복잡한 파싱이 필요한 경우 Python 등 외부 도구를 활용합니다.
-- **보안**: API 키나 토큰과 같은 민감한 정보는 실제 운영 시 환경 변수로 관리하거나 별도의 설정 파일로 분리하는 것을 권장합니다. (현재는 예시 토큰이 포함되어 있으므로 주의가 필요합니다.)
+- **보안**: API 키나 토큰과 같은 민감한 정보는 실제 운영 시 환경 변수로 관리하거나 별도의 설정 파일로 분리하는 것을 권장합니다.
