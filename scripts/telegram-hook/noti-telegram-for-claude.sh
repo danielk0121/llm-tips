@@ -28,7 +28,7 @@ fi
 # 5. jq를 활용하여 텔레그램 전송용 JSON 페이로드를 생성합니다.
 JSON_PAYLOAD=$(jq -n \
     --arg chat_id "$CHAT_ID" \
-    --arg text "[✴️ 클로드 작업 완료] 🖥 $(SHOW_HOSTNAME)
+    --arg text "[✴️ 클로드 작업 완료] 🖥 $SHOW_HOSTNAME
 
 📝 응답 요약:
 $SHORT_MSG" \
