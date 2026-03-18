@@ -19,3 +19,4 @@ debug_*.json
 # Environment
 .env
 .env.local
+secrets.env
