@@ -6,6 +6,7 @@ DEBUG=0
 # 텔레그램 봇 정보 설정 (환경변수에서 로드)
 BOT_TOKEN="${TELEGRAM_BOT_TOKEN}"
 CHAT_ID="${TELEGRAM_CHAT_ID}"
+SHOW_HOSTNAME="${CLUADE_CLOUD_NAME}"
 
 # stdin에서 hook 이벤트 JSON 읽기
 INPUT=$(cat)
@@ -27,7 +28,7 @@ fi
 # 5. jq를 활용하여 텔레그램 전송용 JSON 페이로드를 생성합니다.
 JSON_PAYLOAD=$(jq -n \
     --arg chat_id "$CHAT_ID" \
-    --arg text "[✴️ 클로드 작업 완료] 🖥 $(hostname)
+    --arg text "[✴️ 클로드 작업 완료] 🖥 $(SHOW_HOSTNAME)
 
 📝 응답 요약:
 $SHORT_MSG" \
