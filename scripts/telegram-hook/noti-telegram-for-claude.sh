@@ -3,9 +3,9 @@
 # 디버그 파일 남기는 플래그
 DEBUG=0
 
-# 텔레그램 봇 정보 설정
-BOT_TOKEN="TODO 텔레그램 봇 토큰 입력이 필요합니다"
-CHAT_ID="TODO 텔레그램 채팅방 ID 가 필요합니다"
+# 텔레그램 봇 정보 설정 (환경변수에서 로드)
+BOT_TOKEN="${TELEGRAM_BOT_TOKEN}"
+CHAT_ID="${TELEGRAM_CHAT_ID}"
 
 # stdin에서 hook 이벤트 JSON 읽기
 INPUT=$(cat)
